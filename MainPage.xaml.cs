@@ -25,6 +25,7 @@ namespace UWPTestApp
         public MainPage()
         {
             this.InitializeComponent();
+            this.textBoxHelloWorld.Text = "Hello, World!";
         }
     }
 }
