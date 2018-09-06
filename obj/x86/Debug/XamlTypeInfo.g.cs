@@ -132,15 +132,25 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
+            _typeNameTable = new string[8];
             _typeNameTable[0] = "UWPTestApp.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.Customer>";
+            _typeNameTable[4] = "System.Collections.ObjectModel.Collection`1<UWPTestApp.Customer>";
+            _typeNameTable[5] = "Object";
+            _typeNameTable[6] = "UWPTestApp.Customer";
+            _typeNameTable[7] = "String";
 
-            _typeTable = new global::System.Type[3];
+            _typeTable = new global::System.Type[8];
             _typeTable[0] = typeof(global::UWPTestApp.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::UWPTestApp.Customer>);
+            _typeTable[4] = typeof(global::System.Collections.ObjectModel.Collection<global::UWPTestApp.Customer>);
+            _typeTable[5] = typeof(global::System.Object);
+            _typeTable[6] = typeof(global::UWPTestApp.Customer);
+            _typeTable[7] = typeof(global::System.String);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -176,6 +186,21 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::UWPTestApp.MainPage(); }
+        private object Activate_3_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::UWPTestApp.Customer>(); }
+        private object Activate_4_Collection() { return new global::System.Collections.ObjectModel.Collection<global::UWPTestApp.Customer>(); }
+        private object Activate_6_Customer() { return new global::UWPTestApp.Customer(); }
+        private void VectorAdd_3_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::UWPTestApp.Customer>)instance;
+            var newItem = (global::UWPTestApp.Customer)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_4_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::UWPTestApp.Customer>)instance;
+            var newItem = (global::UWPTestApp.Customer)item;
+            collection.Add(newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -190,6 +215,7 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
             case 0:   //  UWPTestApp.MainPage
                 userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_MainPage;
+                userType.AddMemberName("Customers");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -201,16 +227,77 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
+
+            case 3:   //  System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.Customer>
+                userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<UWPTestApp.Customer>"));
+                userType.CollectionAdd = VectorAdd_3_ObservableCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 4:   //  System.Collections.ObjectModel.Collection`1<UWPTestApp.Customer>
+                userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_4_Collection;
+                userType.CollectionAdd = VectorAdd_4_Collection;
+                xamlType = userType;
+                break;
+
+            case 5:   //  Object
+                xamlType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 6:   //  UWPTestApp.Customer
+                userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_6_Customer;
+                userType.AddMemberName("Name");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 7:   //  String
+                xamlType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
             }
             return xamlType;
         }
 
 
+        private object get_0_MainPage_Customers(object instance)
+        {
+            var that = (global::UWPTestApp.MainPage)instance;
+            return that.Customers;
+        }
+        private object get_1_Customer_Name(object instance)
+        {
+            var that = (global::UWPTestApp.Customer)instance;
+            return that.Name;
+        }
+        private void set_1_Customer_Name(object instance, object Value)
+        {
+            var that = (global::UWPTestApp.Customer)instance;
+            that.Name = (global::System.String)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "UWPTestApp.MainPage.Customers":
+                userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.MainPage");
+                xamlMember = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember(this, "Customers", "System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.Customer>");
+                xamlMember.Getter = get_0_MainPage_Customers;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "UWPTestApp.Customer.Name":
+                userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.Customer");
+                xamlMember = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember(this, "Name", "String");
+                xamlMember.Getter = get_1_Customer_Name;
+                xamlMember.Setter = set_1_Customer_Name;
+                break;
+            }
             return xamlMember;
         }
     }
