@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace UWPTestApp
-{
-    class Customer
+{ 
+    public class Customer
     {
         public string Name { get; set; }
     }
