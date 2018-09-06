@@ -30,7 +30,6 @@ namespace UWPTestApp
         public MainPage()
         {
             this.InitializeComponent();
-            this.textBoxHelloWorld.Text = "Hello, World!";
 
             this.Customers.Add(new Customer() { Name = "NAME1" });
             this.Customers.Add(new Customer() { Name = "NAME2" });
