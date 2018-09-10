@@ -81,7 +81,18 @@ namespace UWPTestApp
             {
                 Debug.WriteLine(ex.Message);
             }
-            this.WebView_0.NavigateToString(clickedItem.Link);
+
+            string uriString = clickedItem.Link;
+            Uri uri;
+            if (Uri.IsWellFormedUriString(uriString, UriKind.Absolute))
+            {
+                uri = new Uri(uriString);
+                this.WebView_0.Navigate(uri);
+            }
+            else
+            {
+                Debug.WriteLine("invalid uriString: " + uriString);
+            }           
         }
 
 
