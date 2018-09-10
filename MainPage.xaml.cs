@@ -26,8 +26,6 @@ namespace UWPTestApp
     {
         DispatcherTimer dispatcherTimer;
         RSSFeedReader rss_0;
-        RSSFeedReader rss_1;
-        RSSFeedReader rss_2;
 
         public ObservableCollection<Customer> Customers { get; }
             = new ObservableCollection<Customer>();
@@ -36,8 +34,8 @@ namespace UWPTestApp
         {
             this.InitializeComponent();
             rss_0 = new RSSFeedReader();
-            rss_1 = new RSSFeedReader();
-            rss_2 = new RSSFeedReader();
+            string rssFeed = this.RSSFeedURL.Text;
+            GetFeedFromTextBox();
             DispatcherTimerSetup();
         }
 
@@ -53,16 +51,27 @@ namespace UWPTestApp
 
         void dispatcherTimer_Tick(object sender, object e)
         {
-            // Read RSS Feeds every tick of the timer
-            rss_0.downloadRSSFeedAsync("https://news.xbox.com/en-us/feed/stories/", Customers);
-            rss_1.downloadRSSFeedAsync("http://feeds.reuters.com/reuters/scienceNews", Customers);
-            rss_2.downloadRSSFeedAsync("https://www.npr.org/rss/podcast.php?id=510308", Customers);
-
+            GetFeedFromTextBox();
         }
 
         private void Page_Loaded_1(object sender, RoutedEventArgs e)
         {
             DispatcherTimerSetup();
+        }
+
+        private void RSSFeedURL_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            GetFeedFromTextBox();
+        }
+
+        private void GetFeedFromTextBox()
+        {
+            // At this point in this experiment, it is becoming clear that a Collection
+            // is the wrong data structure. #TODO get rid of Customers
+            // For now, clear it
+            Customers.Clear();
+            string rssFeed = this.RSSFeedURL.Text;
+            rss_0.downloadRSSFeedAsync(rssFeed, Customers);
         }
     }
 }
