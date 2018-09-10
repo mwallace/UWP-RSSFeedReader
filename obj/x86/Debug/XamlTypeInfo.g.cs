@@ -249,6 +249,7 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
             case 6:   //  UWPTestApp.Customer
                 userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_6_Customer;
+                userType.AddMemberName("Link");
                 userType.AddMemberName("Name");
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -267,12 +268,22 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
             var that = (global::UWPTestApp.MainPage)instance;
             return that.Customers;
         }
-        private object get_1_Customer_Name(object instance)
+        private object get_1_Customer_Link(object instance)
+        {
+            var that = (global::UWPTestApp.Customer)instance;
+            return that.Link;
+        }
+        private void set_1_Customer_Link(object instance, object Value)
+        {
+            var that = (global::UWPTestApp.Customer)instance;
+            that.Link = (global::System.String)Value;
+        }
+        private object get_2_Customer_Name(object instance)
         {
             var that = (global::UWPTestApp.Customer)instance;
             return that.Name;
         }
-        private void set_1_Customer_Name(object instance, object Value)
+        private void set_2_Customer_Name(object instance, object Value)
         {
             var that = (global::UWPTestApp.Customer)instance;
             that.Name = (global::System.String)Value;
@@ -291,11 +302,17 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
                 xamlMember.Getter = get_0_MainPage_Customers;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "UWPTestApp.Customer.Link":
+                userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.Customer");
+                xamlMember = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember(this, "Link", "String");
+                xamlMember.Getter = get_1_Customer_Link;
+                xamlMember.Setter = set_1_Customer_Link;
+                break;
             case "UWPTestApp.Customer.Name":
                 userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.Customer");
                 xamlMember = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_1_Customer_Name;
-                xamlMember.Setter = set_1_Customer_Name;
+                xamlMember.Getter = get_2_Customer_Name;
+                xamlMember.Setter = set_2_Customer_Name;
                 break;
             }
             return xamlMember;
