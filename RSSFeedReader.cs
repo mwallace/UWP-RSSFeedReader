@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace UWPTestApp
 
             Uri feedUri
                 = new Uri(url);
-
+            
             try
             {
                 SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri);
@@ -33,10 +34,17 @@ namespace UWPTestApp
 
                 foreach (SyndicationItem item in feed.Items)
                 {
-                    RSSResult += item.Title.Text + ", " +
+                    RSSResult = item.Title.Text + ", " +
                                      item.PublishedDate.ToString() + Environment.NewLine;
+                    string link = string.Empty;
+                    if (item.Links.Count > 0)
+                    {
+                        link = item.Links[0].Uri.AbsoluteUri;
+                    }
+                    
+                    Customers.Add(new Customer() { Name = RSSResult, Link = link });
                 }
-                Customers.Add(new Customer() { Name = RSSResult });
+                
             }
             catch (Exception ex)
             {

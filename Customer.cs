@@ -11,6 +11,13 @@ namespace UWPTestApp
     public class Customer : INotifyPropertyChanged
     {
         private string _name;
+        private string _link;
+
+        public string Link
+        {
+            get { return _link; }
+            set { _link = value; }
+        }
         public string Name
         {
             get => _name;
