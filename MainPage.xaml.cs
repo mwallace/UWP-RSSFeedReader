@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Input;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -68,5 +69,21 @@ namespace UWPTestApp
             string rssFeed = this.RSSFeedURL.Text;
             rss_0.downloadRSSFeedAsync(rssFeed, Customers);
         }
+
+        public void ClickItemList(object sender, ItemClickEventArgs e)
+        {
+            Customer clickedItem = null;
+            try
+            {
+                clickedItem = (Customer)e.ClickedItem;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            this.WebView_0.NavigateToString(clickedItem.Link);
+        }
+
+
     }
 }

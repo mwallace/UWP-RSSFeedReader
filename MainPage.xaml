@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView  ItemsSource="{x:Bind Customers}"
+        <ListView  ItemsSource="{x:Bind Customers}" IsItemClickEnabled="True" ItemClick="ClickItemList"
             HorizontalAlignment="Center"
             VerticalAlignment="Center" Margin="139,92,133,416">
             <ListView.ItemTemplate>
@@ -19,5 +19,6 @@
         </ListView>
         <TextBlock HorizontalAlignment="Left" Margin="36,10,0,0" TextWrapping="Wrap" Text="Please Enter RSS Feed URL:" VerticalAlignment="Top" Width="279"/>
         <TextBox x:Name="RSSFeedURL" HorizontalAlignment="Left" Margin="36,35,0,0" TextWrapping="Wrap" Text="https://news.xbox.com/en-us/feed/stories/" VerticalAlignment="Top" Width="279" TextChanged="RSSFeedURL_TextChanged"/>
+        <WebView x:Name="WebView_0" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="427,762,0,0"/>
     </Grid>
 </Page>
