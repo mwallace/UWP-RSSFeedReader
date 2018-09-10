@@ -10,12 +10,14 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView  ItemsSource="{x:Bind Customers}"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center">
+            VerticalAlignment="Center" Margin="139,92,133,416">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Customer">
                     <TextBlock Text="{x:Bind Name, Mode=OneWay}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <TextBlock HorizontalAlignment="Left" Margin="36,10,0,0" TextWrapping="Wrap" Text="Please Enter RSS Feed URL:" VerticalAlignment="Top" Width="279"/>
+        <TextBox x:Name="RSSFeedURL" HorizontalAlignment="Left" Margin="36,35,0,0" TextWrapping="Wrap" Text="https://news.xbox.com/en-us/feed/stories/" VerticalAlignment="Top" Width="279" TextChanged="RSSFeedURL_TextChanged"/>
     </Grid>
 </Page>
