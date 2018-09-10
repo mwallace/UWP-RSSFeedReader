@@ -54,11 +54,6 @@ namespace UWPTestApp
             GetFeedFromTextBox();
         }
 
-        private void Page_Loaded_1(object sender, RoutedEventArgs e)
-        {
-            DispatcherTimerSetup();
-        }
-
         private void RSSFeedURL_TextChanged(object sender, TextChangedEventArgs e)
         {
             GetFeedFromTextBox();
