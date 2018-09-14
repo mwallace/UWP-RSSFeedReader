@@ -8,17 +8,30 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView  ItemsSource="{x:Bind Customers}" IsItemClickEnabled="True" ItemClick="ClickItemList"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center" Margin="36,92,411,433" Width="993" Height="435">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListView  
+            Grid.Column="0"
+            Grid.Row="2"
+            ItemsSource="{x:Bind Customers}" 
+            IsItemClickEnabled="True" 
+            ItemClick="ClickItemList"
+            >
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Customer">
                     <TextBlock Text="{x:Bind Name, Mode=OneWay}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TextBlock HorizontalAlignment="Left" Margin="36,10,0,0" TextWrapping="Wrap" Text="Please Enter RSS Feed URL:" VerticalAlignment="Top" Width="279"/>
-        <TextBox x:Name="RSSFeedURL" HorizontalAlignment="Left" Margin="36,35,0,0" TextWrapping="Wrap" Text="https://news.xbox.com/en-us/feed/stories/" VerticalAlignment="Top" Width="279" TextChanged="RSSFeedURL_TextChanged"/>
-        <WebView x:Name="WebView_0" HorizontalAlignment="Left" Height="418" VerticalAlignment="Top" Width="993" Margin="36,532,0,0"/>
+        <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Please Enter RSS Feed URL:" VerticalAlignment="Top"/>
+        <TextBox Grid.Column="0" Grid.Row="1" x:Name="RSSFeedURL" HorizontalAlignment="Left" TextWrapping="Wrap" Text="https://news.xbox.com/en-us/feed/stories/" VerticalAlignment="Top" TextChanged="RSSFeedURL_TextChanged"/>
+        <WebView Grid.Column="1" Grid.Row="2" x:Name="WebView_0"/>
     </Grid>
 </Page>
