@@ -15,7 +15,9 @@ namespace UWPTestApp
         global::Windows.UI.Xaml.Markup.IComponentConnector,
         global::Windows.UI.Xaml.Markup.IComponentConnector2
     {
-        internal class XamlBindingSetters
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        private static class XamlBindingSetters
         {
             public static void Set_Windows_UI_Xaml_Controls_ItemsControl_ItemsSource(global::Windows.UI.Xaml.Controls.ItemsControl obj, global::System.Object value, string targetNullValue)
             {
@@ -35,8 +37,11 @@ namespace UWPTestApp
             }
         };
 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private class MainPage_obj5_Bindings :
             global::Windows.UI.Xaml.IDataTemplateExtension,
+            global::Windows.UI.Xaml.Markup.IDataTemplateComponent,
             global::Windows.UI.Xaml.Markup.IComponentConnector,
             IMainPage_Bindings
         {
@@ -62,7 +67,7 @@ namespace UWPTestApp
             {
                 switch(connectionId)
                 {
-                    case 5:
+                    case 5: // MainPage.xaml line 29
                         this.obj5 = new global::System.WeakReference((global::Windows.UI.Xaml.Controls.TextBlock)target);
                         break;
                     default:
@@ -72,13 +77,10 @@ namespace UWPTestApp
 
             public void DataContextChangedHandler(global::Windows.UI.Xaml.FrameworkElement sender, global::Windows.UI.Xaml.DataContextChangedEventArgs args)
             {
-                 global::UWPTestApp.Customer data = args.NewValue as global::UWPTestApp.Customer;
-                 if (args.NewValue != null && data == null)
+                 if (this.SetDataRoot(args.NewValue))
                  {
-                    throw new global::System.ArgumentException("Incorrect type passed into template. Based on the x:DataType global::UWPTestApp.Customer was expected.");
+                    this.Update();
                  }
-                 this.SetDataRoot(data);
-                 this.Update();
             }
 
             // IDataTemplateExtension
@@ -91,24 +93,37 @@ namespace UWPTestApp
             public int ProcessBindings(global::Windows.UI.Xaml.Controls.ContainerContentChangingEventArgs args)
             {
                 int nextPhase = -1;
-                switch(args.Phase)
-                {
-                    case 0:
-                        nextPhase = -1;
-                        this.SetDataRoot(args.Item as global::UWPTestApp.Customer);
-                        if (!removedDataContextHandler)
-                        {
-                            removedDataContextHandler = true;
-                            ((global::Windows.UI.Xaml.Controls.TextBlock)args.ItemContainer.ContentTemplateRoot).DataContextChanged -= this.DataContextChangedHandler;
-                        }
-                        this.initialized = true;
-                        break;
-                }
-                this.Update_((global::UWPTestApp.Customer) args.Item, 1 << (int)args.Phase);
+                ProcessBindings(args.Item, args.ItemIndex, (int)args.Phase, out nextPhase);
                 return nextPhase;
             }
 
             public void ResetTemplate()
+            {
+                Recycle();
+            }
+
+            // IDataTemplateComponent
+
+            public void ProcessBindings(global::System.Object item, int itemIndex, int phase, out int nextPhase)
+            {
+                nextPhase = -1;
+                switch(phase)
+                {
+                    case 0:
+                        nextPhase = -1;
+                        this.SetDataRoot(item);
+                        if (!removedDataContextHandler)
+                        {
+                            removedDataContextHandler = true;
+                            (this.obj5.Target as global::Windows.UI.Xaml.Controls.TextBlock).DataContextChanged -= this.DataContextChangedHandler;
+                        }
+                        this.initialized = true;
+                        break;
+                }
+                this.Update_((global::UWPTestApp.Customer) item, 1 << phase);
+            }
+
+            public void Recycle()
             {
                 this.bindingsTracking.ReleaseAllListeners();
             }
@@ -135,12 +150,20 @@ namespace UWPTestApp
                 this.initialized = false;
             }
 
-            // MainPage_obj5_Bindings
+            public void DisconnectUnloadedObject(int connectionId)
+            {
+                throw new global::System.ArgumentException("No unloadable elements to disconnect.");
+            }
 
-            public void SetDataRoot(global::UWPTestApp.Customer newDataRoot)
+            public bool SetDataRoot(global::System.Object newDataRoot)
             {
                 this.bindingsTracking.ReleaseAllListeners();
-                this.dataRoot = newDataRoot;
+                if (newDataRoot != null)
+                {
+                    this.dataRoot = (global::UWPTestApp.Customer)newDataRoot;
+                    return true;
+                }
+                return false;
             }
 
             // Update methods for each path node used in binding steps.
@@ -157,19 +180,40 @@ namespace UWPTestApp
             }
             private void Update_Name(global::System.String obj, int phase)
             {
-                if((phase & ((1 << 0) | NOT_PHASED | DATA_CHANGED)) != 0)
+                if ((phase & ((1 << 0) | NOT_PHASED | DATA_CHANGED)) != 0)
                 {
-                    XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text(this.obj5.Target as global::Windows.UI.Xaml.Controls.TextBlock, obj, null);
+                    // MainPage.xaml line 29
+                    if ((this.obj5.Target as global::Windows.UI.Xaml.Controls.TextBlock) != null)
+                    {
+                        XamlBindingSetters.Set_Windows_UI_Xaml_Controls_TextBlock_Text((this.obj5.Target as global::Windows.UI.Xaml.Controls.TextBlock), obj, null);
+                    }
                 }
             }
 
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             private class MainPage_obj5_BindingsTracking
             {
-                global::System.WeakReference<MainPage_obj5_Bindings> WeakRefToBindingObj; 
+                private global::System.WeakReference<MainPage_obj5_Bindings> weakRefToBindingObj; 
 
                 public MainPage_obj5_BindingsTracking(MainPage_obj5_Bindings obj)
                 {
-                    WeakRefToBindingObj = new global::System.WeakReference<MainPage_obj5_Bindings>(obj);
+                    weakRefToBindingObj = new global::System.WeakReference<MainPage_obj5_Bindings>(obj);
+                }
+
+                public MainPage_obj5_Bindings TryGetBindingObject()
+                {
+                    MainPage_obj5_Bindings bindingObject = null;
+                    if (weakRefToBindingObj != null)
+                    {
+                        weakRefToBindingObj.TryGetTarget(out bindingObject);
+                        if (bindingObject == null)
+                        {
+                            weakRefToBindingObj = null;
+                            ReleaseAllListeners();
+                        }
+                    }
+                    return bindingObject;
                 }
 
                 public void ReleaseAllListeners()
@@ -179,8 +223,8 @@ namespace UWPTestApp
 
                 public void PropertyChanged_(object sender, global::System.ComponentModel.PropertyChangedEventArgs e)
                 {
-                    MainPage_obj5_Bindings bindings;
-                    if(WeakRefToBindingObj.TryGetTarget(out bindings))
+                    MainPage_obj5_Bindings bindings = TryGetBindingObject();
+                    if (bindings != null)
                     {
                         string propName = e.PropertyName;
                         global::UWPTestApp.Customer obj = sender as global::UWPTestApp.Customer;
@@ -188,7 +232,7 @@ namespace UWPTestApp
                         {
                             if (obj != null)
                             {
-                                    bindings.Update_Name(obj.Name, DATA_CHANGED);
+                                bindings.Update_Name(obj.Name, DATA_CHANGED);
                             }
                         }
                         else
@@ -211,8 +255,8 @@ namespace UWPTestApp
                 }
                 public void UpdateChildListeners_(global::UWPTestApp.Customer obj)
                 {
-                    MainPage_obj5_Bindings bindings;
-                    if(WeakRefToBindingObj.TryGetTarget(out bindings))
+                    MainPage_obj5_Bindings bindings = TryGetBindingObject();
+                    if (bindings != null)
                     {
                         if (bindings.dataRoot != null)
                         {
@@ -228,6 +272,8 @@ namespace UWPTestApp
             }
         }
 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private class MainPage_obj1_Bindings :
             global::Windows.UI.Xaml.Markup.IComponentConnector,
             IMainPage_Bindings
@@ -250,7 +296,7 @@ namespace UWPTestApp
             {
                 switch(connectionId)
                 {
-                    case 2:
+                    case 2: // MainPage.xaml line 20
                         this.obj2 = (global::Windows.UI.Xaml.Controls.ListView)target;
                         break;
                     default:
@@ -278,11 +324,19 @@ namespace UWPTestApp
             {
             }
 
-            // MainPage_obj1_Bindings
-
-            public void SetDataRoot(global::UWPTestApp.MainPage newDataRoot)
+            public void DisconnectUnloadedObject(int connectionId)
             {
-                this.dataRoot = newDataRoot;
+                throw new global::System.ArgumentException("No unloadable elements to disconnect.");
+            }
+
+            public bool SetDataRoot(global::System.Object newDataRoot)
+            {
+                if (newDataRoot != null)
+                {
+                    this.dataRoot = (global::UWPTestApp.MainPage)newDataRoot;
+                    return true;
+                }
+                return false;
             }
 
             public void Loading(global::Windows.UI.Xaml.FrameworkElement src, object data)
@@ -303,8 +357,9 @@ namespace UWPTestApp
             }
             private void Update_Customers(global::System.Collections.ObjectModel.ObservableCollection<global::UWPTestApp.Customer> obj, int phase)
             {
-                if((phase & ((1 << 0) | NOT_PHASED )) != 0)
+                if ((phase & ((1 << 0) | NOT_PHASED )) != 0)
                 {
+                    // MainPage.xaml line 20
                     XamlBindingSetters.Set_Windows_UI_Xaml_Controls_ItemsControl_ItemsSource(this.obj2, obj, null);
                 }
             }
@@ -312,29 +367,25 @@ namespace UWPTestApp
         /// <summary>
         /// Connect()
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public void Connect(int connectionId, object target)
         {
             switch(connectionId)
             {
-            case 2:
+            case 2: // MainPage.xaml line 20
                 {
                     global::Windows.UI.Xaml.Controls.ListView element2 = (global::Windows.UI.Xaml.Controls.ListView)(target);
-                    #line 25 "..\..\..\MainPage.xaml"
                     ((global::Windows.UI.Xaml.Controls.ListView)element2).ItemClick += this.ClickItemList;
-                    #line default
                 }
                 break;
-            case 3:
+            case 3: // MainPage.xaml line 34
                 {
                     this.RSSFeedURL = (global::Windows.UI.Xaml.Controls.TextBox)(target);
-                    #line 34 "..\..\..\MainPage.xaml"
                     ((global::Windows.UI.Xaml.Controls.TextBox)this.RSSFeedURL).TextChanged += this.RSSFeedURL_TextChanged;
-                    #line default
                 }
                 break;
-            case 4:
+            case 4: // MainPage.xaml line 35
                 {
                     this.WebView_0 = (global::Windows.UI.Xaml.Controls.WebView)(target);
                 }
@@ -345,15 +396,18 @@ namespace UWPTestApp
             this._contentLoaded = true;
         }
 
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 14.0.0.0")]
+        /// <summary>
+        /// GetBindingConnector(int connectionId, object target)
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Windows.UI.Xaml.Markup.IComponentConnector GetBindingConnector(int connectionId, object target)
         {
             global::Windows.UI.Xaml.Markup.IComponentConnector returnValue = null;
             switch(connectionId)
             {
-            case 1:
-                {
+            case 1: // MainPage.xaml line 1
+                {                    
                     global::Windows.UI.Xaml.Controls.Page element1 = (global::Windows.UI.Xaml.Controls.Page)target;
                     MainPage_obj1_Bindings bindings = new MainPage_obj1_Bindings();
                     returnValue = bindings;
@@ -362,14 +416,15 @@ namespace UWPTestApp
                     element1.Loading += bindings.Loading;
                 }
                 break;
-            case 5:
-                {
+            case 5: // MainPage.xaml line 29
+                {                    
                     global::Windows.UI.Xaml.Controls.TextBlock element5 = (global::Windows.UI.Xaml.Controls.TextBlock)target;
                     MainPage_obj5_Bindings bindings = new MainPage_obj5_Bindings();
                     returnValue = bindings;
-                    bindings.SetDataRoot((global::UWPTestApp.Customer) element5.DataContext);
+                    bindings.SetDataRoot(element5.DataContext);
                     element5.DataContextChanged += bindings.DataContextChangedHandler;
                     global::Windows.UI.Xaml.DataTemplate.SetExtensionInstance(element5, bindings);
+                    global::Windows.UI.Xaml.Markup.XamlBindingHelper.SetDataTemplateComponent(element5, bindings);
                 }
                 break;
             }
