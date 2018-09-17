@@ -18,7 +18,7 @@ namespace UWPTestApp
             get { return _rssResult; }
             set { _rssResult = value; }
         }
-        public async Task downloadRSSFeedAsync(string url, ObservableCollection<Customer> Customers)
+        public async Task downloadRSSFeedAsync(string url, ObservableCollection<RSSLink> RSSLinks)
         {
             Windows.Web.Syndication.SyndicationClient client = new SyndicationClient();
 
@@ -42,7 +42,7 @@ namespace UWPTestApp
                         link = item.Links[0].Uri.AbsoluteUri;
                     }
                     
-                    Customers.Add(new Customer() { Name = RSSResult, Link = link });
+                    RSSLinks.Add(new RSSLink() { Name = RSSResult, Link = link });
                 }
                 
             }

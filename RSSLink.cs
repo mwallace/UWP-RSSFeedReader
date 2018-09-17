@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace UWPTestApp
 { 
-    public class Customer : INotifyPropertyChanged
+    public class RSSLink : INotifyPropertyChanged
     {
         private string _name;
         private string _link;

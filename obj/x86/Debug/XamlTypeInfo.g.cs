@@ -193,20 +193,20 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
             _typeNameTable[0] = "UWPTestApp.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.Customer>";
-            _typeNameTable[4] = "System.Collections.ObjectModel.Collection`1<UWPTestApp.Customer>";
+            _typeNameTable[3] = "System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.RSSLink>";
+            _typeNameTable[4] = "System.Collections.ObjectModel.Collection`1<UWPTestApp.RSSLink>";
             _typeNameTable[5] = "Object";
-            _typeNameTable[6] = "UWPTestApp.Customer";
+            _typeNameTable[6] = "UWPTestApp.RSSLink";
             _typeNameTable[7] = "String";
 
             _typeTable = new global::System.Type[8];
             _typeTable[0] = typeof(global::UWPTestApp.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::UWPTestApp.Customer>);
-            _typeTable[4] = typeof(global::System.Collections.ObjectModel.Collection<global::UWPTestApp.Customer>);
+            _typeTable[3] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::UWPTestApp.RSSLink>);
+            _typeTable[4] = typeof(global::System.Collections.ObjectModel.Collection<global::UWPTestApp.RSSLink>);
             _typeTable[5] = typeof(global::System.Object);
-            _typeTable[6] = typeof(global::UWPTestApp.Customer);
+            _typeTable[6] = typeof(global::UWPTestApp.RSSLink);
             _typeTable[7] = typeof(global::System.String);
         }
 
@@ -243,19 +243,19 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::UWPTestApp.MainPage(); }
-        private object Activate_3_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::UWPTestApp.Customer>(); }
-        private object Activate_4_Collection() { return new global::System.Collections.ObjectModel.Collection<global::UWPTestApp.Customer>(); }
-        private object Activate_6_Customer() { return new global::UWPTestApp.Customer(); }
+        private object Activate_3_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::UWPTestApp.RSSLink>(); }
+        private object Activate_4_Collection() { return new global::System.Collections.ObjectModel.Collection<global::UWPTestApp.RSSLink>(); }
+        private object Activate_6_RSSLink() { return new global::UWPTestApp.RSSLink(); }
         private void VectorAdd_3_ObservableCollection(object instance, object item)
         {
-            var collection = (global::System.Collections.Generic.ICollection<global::UWPTestApp.Customer>)instance;
-            var newItem = (global::UWPTestApp.Customer)item;
+            var collection = (global::System.Collections.Generic.ICollection<global::UWPTestApp.RSSLink>)instance;
+            var newItem = (global::UWPTestApp.RSSLink)item;
             collection.Add(newItem);
         }
         private void VectorAdd_4_Collection(object instance, object item)
         {
-            var collection = (global::System.Collections.Generic.ICollection<global::UWPTestApp.Customer>)instance;
-            var newItem = (global::UWPTestApp.Customer)item;
+            var collection = (global::System.Collections.Generic.ICollection<global::UWPTestApp.RSSLink>)instance;
+            var newItem = (global::UWPTestApp.RSSLink)item;
             collection.Add(newItem);
         }
 
@@ -272,7 +272,7 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
             case 0:   //  UWPTestApp.MainPage
                 userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_MainPage;
-                userType.AddMemberName("Customers");
+                userType.AddMemberName("RSSLinks");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -285,14 +285,14 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
                 xamlType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.Customer>
-                userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<UWPTestApp.Customer>"));
+            case 3:   //  System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.RSSLink>
+                userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<UWPTestApp.RSSLink>"));
                 userType.CollectionAdd = VectorAdd_3_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 4:   //  System.Collections.ObjectModel.Collection`1<UWPTestApp.Customer>
+            case 4:   //  System.Collections.ObjectModel.Collection`1<UWPTestApp.RSSLink>
                 userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_4_Collection;
                 userType.CollectionAdd = VectorAdd_4_Collection;
@@ -303,9 +303,9 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
                 xamlType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  UWPTestApp.Customer
+            case 6:   //  UWPTestApp.RSSLink
                 userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_6_Customer;
+                userType.Activator = Activate_6_RSSLink;
                 userType.AddMemberName("Link");
                 userType.AddMemberName("Name");
                 userType.SetIsLocalType();
@@ -320,29 +320,29 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
         }
 
 
-        private object get_0_MainPage_Customers(object instance)
+        private object get_0_MainPage_RSSLinks(object instance)
         {
             var that = (global::UWPTestApp.MainPage)instance;
-            return that.Customers;
+            return that.RSSLinks;
         }
-        private object get_1_Customer_Link(object instance)
+        private object get_1_RSSLink_Link(object instance)
         {
-            var that = (global::UWPTestApp.Customer)instance;
+            var that = (global::UWPTestApp.RSSLink)instance;
             return that.Link;
         }
-        private void set_1_Customer_Link(object instance, object Value)
+        private void set_1_RSSLink_Link(object instance, object Value)
         {
-            var that = (global::UWPTestApp.Customer)instance;
+            var that = (global::UWPTestApp.RSSLink)instance;
             that.Link = (global::System.String)Value;
         }
-        private object get_2_Customer_Name(object instance)
+        private object get_2_RSSLink_Name(object instance)
         {
-            var that = (global::UWPTestApp.Customer)instance;
+            var that = (global::UWPTestApp.RSSLink)instance;
             return that.Name;
         }
-        private void set_2_Customer_Name(object instance, object Value)
+        private void set_2_RSSLink_Name(object instance, object Value)
         {
-            var that = (global::UWPTestApp.Customer)instance;
+            var that = (global::UWPTestApp.RSSLink)instance;
             that.Name = (global::System.String)Value;
         }
 
@@ -353,23 +353,23 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
 
             switch (longMemberName)
             {
-            case "UWPTestApp.MainPage.Customers":
+            case "UWPTestApp.MainPage.RSSLinks":
                 userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.MainPage");
-                xamlMember = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember(this, "Customers", "System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.Customer>");
-                xamlMember.Getter = get_0_MainPage_Customers;
+                xamlMember = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember(this, "RSSLinks", "System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.RSSLink>");
+                xamlMember.Getter = get_0_MainPage_RSSLinks;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "UWPTestApp.Customer.Link":
-                userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.Customer");
+            case "UWPTestApp.RSSLink.Link":
+                userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.RSSLink");
                 xamlMember = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember(this, "Link", "String");
-                xamlMember.Getter = get_1_Customer_Link;
-                xamlMember.Setter = set_1_Customer_Link;
+                xamlMember.Getter = get_1_RSSLink_Link;
+                xamlMember.Setter = set_1_RSSLink_Link;
                 break;
-            case "UWPTestApp.Customer.Name":
-                userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.Customer");
+            case "UWPTestApp.RSSLink.Name":
+                userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.RSSLink");
                 xamlMember = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_2_Customer_Name;
-                xamlMember.Setter = set_2_Customer_Name;
+                xamlMember.Getter = get_2_RSSLink_Name;
+                xamlMember.Setter = set_2_RSSLink_Name;
                 break;
             }
             return xamlMember;

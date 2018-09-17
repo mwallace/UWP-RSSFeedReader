@@ -20,12 +20,12 @@
         <ListView  
             Grid.Column="0"
             Grid.Row="2"
-            ItemsSource="{x:Bind Customers}" 
+            ItemsSource="{x:Bind RSSLinks}" 
             IsItemClickEnabled="True" 
             ItemClick="ClickItemList"
             >
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="local:Customer">
+                <DataTemplate x:DataType="local:RSSLink">
                     <TextBlock Text="{x:Bind Name, Mode=OneWay}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>

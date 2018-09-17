@@ -28,8 +28,8 @@ namespace UWPTestApp
         DispatcherTimer dispatcherTimer;
         RSSFeedReader rss_0;
 
-        public ObservableCollection<Customer> Customers { get; }
-            = new ObservableCollection<Customer>();
+        public ObservableCollection<RSSLink> RSSLinks { get; }
+            = new ObservableCollection<RSSLink>();
 
         public MainPage()
         {
@@ -63,19 +63,19 @@ namespace UWPTestApp
         private void GetFeedFromTextBox()
         {
             // At this point in this experiment, it is becoming clear that a Collection
-            // is the wrong data structure. #TODO get rid of Customers
+            // is the wrong data structure. #TODO get rid of RSSLinks
             // For now, clear it
-            Customers.Clear();
+            RSSLinks.Clear();
             string rssFeed = this.RSSFeedURL.Text;
-            rss_0.downloadRSSFeedAsync(rssFeed, Customers);
+            rss_0.downloadRSSFeedAsync(rssFeed, RSSLinks);
         }
 
         public void ClickItemList(object sender, ItemClickEventArgs e)
         {
-            Customer clickedItem = null;
+            RSSLink clickedItem = null;
             try
             {
-                clickedItem = (Customer)e.ClickedItem;
+                clickedItem = (RSSLink)e.ClickedItem;
             }
             catch (Exception ex)
             {
