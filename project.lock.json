@@ -21962,9 +21962,9 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\mryan\\onedrive\\documents\\visual studio 2017\\Projects\\UWPTestApp\\UWPTestApp\\UWPTestApp.csproj",
-      "projectName": "UWPTestApp",
-      "projectPath": "C:\\Users\\mryan\\onedrive\\documents\\visual studio 2017\\Projects\\UWPTestApp\\UWPTestApp\\UWPTestApp.csproj",
+      "projectUniqueName": "C:\\Users\\mryan\\onedrive\\documents\\visual studio 2017\\Projects\\UWPTestApp\\UWPTestApp\\RSSFeedReader.csproj",
+      "projectName": "RSSFeedReader",
+      "projectPath": "C:\\Users\\mryan\\onedrive\\documents\\visual studio 2017\\Projects\\UWPTestApp\\UWPTestApp\\RSSFeedReader.csproj",
       "projectJsonPath": "C:\\Users\\mryan\\onedrive\\documents\\visual studio 2017\\Projects\\UWPTestApp\\UWPTestApp\\project.json",
       "projectStyle": "ProjectJson"
     },

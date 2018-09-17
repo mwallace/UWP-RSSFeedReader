@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Web.Syndication;
 
-namespace UWPTestApp
+namespace RSSFeedReader
 {
     class RSSFeedReader
     {

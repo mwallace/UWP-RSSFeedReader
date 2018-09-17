@@ -8,18 +8,18 @@
 //------------------------------------------------------------------------------
 
 
-namespace UWPTestApp
+namespace RSSFeedReader
 {
     public partial class App : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        private global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMetaDataProvider __appProvider;
-        private global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMetaDataProvider _AppProvider
+        private global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlMetaDataProvider __appProvider;
+        private global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlMetaDataProvider _AppProvider
         {
             get
             {
                 if (__appProvider == null)
                 {
-                    __appProvider = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMetaDataProvider();
+                    __appProvider = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlMetaDataProvider();
                 }
                 return __appProvider;
             }
@@ -51,7 +51,7 @@ namespace UWPTestApp
     }
 }
 
-namespace UWPTestApp.UWPTestApp_XamlTypeInfo
+namespace UWPTestApp.RSSFeedReader_XamlTypeInfo
 {
     /// <summary>
     /// Main class for providing metadata for the app or library
@@ -60,15 +60,15 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public sealed class XamlMetaDataProvider : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        private global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
+        private global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
 
-        private global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlTypeInfoProvider Provider
+        private global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlTypeInfoProvider Provider
         {
             get
             {
                 if (_provider == null)
                 {
-                    _provider = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlTypeInfoProvider();
+                    _provider = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlTypeInfoProvider();
                 }
                 return _provider;
             }
@@ -190,23 +190,23 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
         private void InitTypeTables()
         {
             _typeNameTable = new string[8];
-            _typeNameTable[0] = "UWPTestApp.MainPage";
+            _typeNameTable[0] = "RSSFeedReader.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.RSSLink>";
-            _typeNameTable[4] = "System.Collections.ObjectModel.Collection`1<UWPTestApp.RSSLink>";
+            _typeNameTable[3] = "System.Collections.ObjectModel.ObservableCollection`1<RSSFeedReader.RSSLink>";
+            _typeNameTable[4] = "System.Collections.ObjectModel.Collection`1<RSSFeedReader.RSSLink>";
             _typeNameTable[5] = "Object";
-            _typeNameTable[6] = "UWPTestApp.RSSLink";
+            _typeNameTable[6] = "RSSFeedReader.RSSLink";
             _typeNameTable[7] = "String";
 
             _typeTable = new global::System.Type[8];
-            _typeTable[0] = typeof(global::UWPTestApp.MainPage);
+            _typeTable[0] = typeof(global::RSSFeedReader.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::UWPTestApp.RSSLink>);
-            _typeTable[4] = typeof(global::System.Collections.ObjectModel.Collection<global::UWPTestApp.RSSLink>);
+            _typeTable[3] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::RSSFeedReader.RSSLink>);
+            _typeTable[4] = typeof(global::System.Collections.ObjectModel.Collection<global::RSSFeedReader.RSSLink>);
             _typeTable[5] = typeof(global::System.Object);
-            _typeTable[6] = typeof(global::UWPTestApp.RSSLink);
+            _typeTable[6] = typeof(global::RSSFeedReader.RSSLink);
             _typeTable[7] = typeof(global::System.String);
         }
 
@@ -242,35 +242,35 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::UWPTestApp.MainPage(); }
-        private object Activate_3_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::UWPTestApp.RSSLink>(); }
-        private object Activate_4_Collection() { return new global::System.Collections.ObjectModel.Collection<global::UWPTestApp.RSSLink>(); }
-        private object Activate_6_RSSLink() { return new global::UWPTestApp.RSSLink(); }
+        private object Activate_0_MainPage() { return new global::RSSFeedReader.MainPage(); }
+        private object Activate_3_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::RSSFeedReader.RSSLink>(); }
+        private object Activate_4_Collection() { return new global::System.Collections.ObjectModel.Collection<global::RSSFeedReader.RSSLink>(); }
+        private object Activate_6_RSSLink() { return new global::RSSFeedReader.RSSLink(); }
         private void VectorAdd_3_ObservableCollection(object instance, object item)
         {
-            var collection = (global::System.Collections.Generic.ICollection<global::UWPTestApp.RSSLink>)instance;
-            var newItem = (global::UWPTestApp.RSSLink)item;
+            var collection = (global::System.Collections.Generic.ICollection<global::RSSFeedReader.RSSLink>)instance;
+            var newItem = (global::RSSFeedReader.RSSLink)item;
             collection.Add(newItem);
         }
         private void VectorAdd_4_Collection(object instance, object item)
         {
-            var collection = (global::System.Collections.Generic.ICollection<global::UWPTestApp.RSSLink>)instance;
-            var newItem = (global::UWPTestApp.RSSLink)item;
+            var collection = (global::System.Collections.Generic.ICollection<global::RSSFeedReader.RSSLink>)instance;
+            var newItem = (global::RSSFeedReader.RSSLink)item;
             collection.Add(newItem);
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
-            global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlSystemBaseType xamlType = null;
-            global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType userType;
+            global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlSystemBaseType xamlType = null;
+            global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlUserType userType;
             string typeName = _typeNameTable[typeIndex];
             global::System.Type type = _typeTable[typeIndex];
 
             switch (typeIndex)
             {
 
-            case 0:   //  UWPTestApp.MainPage
-                userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+            case 0:   //  RSSFeedReader.MainPage
+                userType = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_MainPage;
                 userType.AddMemberName("RSSLinks");
                 userType.SetIsLocalType();
@@ -278,33 +278,33 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
                 break;
 
             case 1:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.RSSLink>
-                userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<UWPTestApp.RSSLink>"));
+            case 3:   //  System.Collections.ObjectModel.ObservableCollection`1<RSSFeedReader.RSSLink>
+                userType = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<RSSFeedReader.RSSLink>"));
                 userType.CollectionAdd = VectorAdd_3_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 4:   //  System.Collections.ObjectModel.Collection`1<UWPTestApp.RSSLink>
-                userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+            case 4:   //  System.Collections.ObjectModel.Collection`1<RSSFeedReader.RSSLink>
+                userType = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_4_Collection;
                 userType.CollectionAdd = VectorAdd_4_Collection;
                 xamlType = userType;
                 break;
 
             case 5:   //  Object
-                xamlType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  UWPTestApp.RSSLink
-                userType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+            case 6:   //  RSSFeedReader.RSSLink
+                userType = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_6_RSSLink;
                 userType.AddMemberName("Link");
                 userType.AddMemberName("Name");
@@ -313,7 +313,7 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
                 break;
 
             case 7:   //  String
-                xamlType = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
             return xamlType;
@@ -322,52 +322,52 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
 
         private object get_0_MainPage_RSSLinks(object instance)
         {
-            var that = (global::UWPTestApp.MainPage)instance;
+            var that = (global::RSSFeedReader.MainPage)instance;
             return that.RSSLinks;
         }
         private object get_1_RSSLink_Link(object instance)
         {
-            var that = (global::UWPTestApp.RSSLink)instance;
+            var that = (global::RSSFeedReader.RSSLink)instance;
             return that.Link;
         }
         private void set_1_RSSLink_Link(object instance, object Value)
         {
-            var that = (global::UWPTestApp.RSSLink)instance;
+            var that = (global::RSSFeedReader.RSSLink)instance;
             that.Link = (global::System.String)Value;
         }
         private object get_2_RSSLink_Name(object instance)
         {
-            var that = (global::UWPTestApp.RSSLink)instance;
+            var that = (global::RSSFeedReader.RSSLink)instance;
             return that.Name;
         }
         private void set_2_RSSLink_Name(object instance, object Value)
         {
-            var that = (global::UWPTestApp.RSSLink)instance;
+            var that = (global::RSSFeedReader.RSSLink)instance;
             that.Name = (global::System.String)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
-            global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember xamlMember = null;
-            global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType userType;
+            global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlMember xamlMember = null;
+            global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlUserType userType;
 
             switch (longMemberName)
             {
-            case "UWPTestApp.MainPage.RSSLinks":
-                userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.MainPage");
-                xamlMember = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember(this, "RSSLinks", "System.Collections.ObjectModel.ObservableCollection`1<UWPTestApp.RSSLink>");
+            case "RSSFeedReader.MainPage.RSSLinks":
+                userType = (global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlUserType)GetXamlTypeByName("RSSFeedReader.MainPage");
+                xamlMember = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlMember(this, "RSSLinks", "System.Collections.ObjectModel.ObservableCollection`1<RSSFeedReader.RSSLink>");
                 xamlMember.Getter = get_0_MainPage_RSSLinks;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "UWPTestApp.RSSLink.Link":
-                userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.RSSLink");
-                xamlMember = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember(this, "Link", "String");
+            case "RSSFeedReader.RSSLink.Link":
+                userType = (global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlUserType)GetXamlTypeByName("RSSFeedReader.RSSLink");
+                xamlMember = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlMember(this, "Link", "String");
                 xamlMember.Getter = get_1_RSSLink_Link;
                 xamlMember.Setter = set_1_RSSLink_Link;
                 break;
-            case "UWPTestApp.RSSLink.Name":
-                userType = (global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("UWPTestApp.RSSLink");
-                xamlMember = new global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlMember(this, "Name", "String");
+            case "RSSFeedReader.RSSLink.Name":
+                userType = (global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlUserType)GetXamlTypeByName("RSSFeedReader.RSSLink");
+                xamlMember = new global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlMember(this, "Name", "String");
                 xamlMember.Getter = get_2_RSSLink_Name;
                 xamlMember.Setter = set_2_RSSLink_Name;
                 break;
@@ -426,9 +426,9 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class XamlUserType : global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlSystemBaseType
+    internal class XamlUserType : global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlSystemBaseType
     {
-        global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlTypeInfoProvider _provider;
         global::Windows.UI.Xaml.Markup.IXamlType _baseType;
         bool _isArray;
         bool _isMarkupExtension;
@@ -442,7 +442,7 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
         global::System.Collections.Generic.Dictionary<string, string> _memberNames;
         global::System.Collections.Generic.Dictionary<string, object> _enumValues;
 
-        public XamlUserType(global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
+        public XamlUserType(global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
             :base(fullName, fullType)
         {
             _provider = provider;
@@ -639,7 +639,7 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlMember : global::Windows.UI.Xaml.Markup.IXamlMember
     {
-        global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlTypeInfoProvider _provider;
         string _name;
         bool _isAttachable;
         bool _isDependencyProperty;
@@ -648,7 +648,7 @@ namespace UWPTestApp.UWPTestApp_XamlTypeInfo
         string _typeName;
         string _targetTypeName;
 
-        public XamlMember(global::UWPTestApp.UWPTestApp_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
+        public XamlMember(global::UWPTestApp.RSSFeedReader_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
         {
             _name = name;
             _typeName = typeName;
